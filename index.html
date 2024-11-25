@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trái Tim Tình Yêu</title>
+  <title>Trái Tim Chuyển Động</title>
   <style>
     body {
       display: flex;
@@ -11,8 +11,9 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #ffe6e6;
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb);
       font-family: Arial, sans-serif;
+      overflow: hidden;
     }
 
     .heart {
@@ -20,8 +21,8 @@
       width: 150px;
       height: 150px;
       background-color: red;
-      margin: 20px;
       transform: rotate(-45deg);
+      animation: pulse 1.5s infinite;
     }
 
     .heart::before,
@@ -48,17 +49,27 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%) rotate(45deg);
       color: white;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
       text-align: center;
+      z-index: 10;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1) rotate(-45deg);
+      }
+      50% {
+        transform: scale(1.1) rotate(-45deg);
+      }
     }
   </style>
 </head>
 <body>
   <div class="heart">
-    <div class="name">[Hạnh]</div>
+    <div class="name">[Tên Người Yêu]</div>
   </div>
 </body>
 </html>
